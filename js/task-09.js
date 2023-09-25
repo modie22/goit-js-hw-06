@@ -10,6 +10,6 @@ const bodyEl = document.querySelector("body");
 const btnFun = () => {
   const rancolor = getRandomHexColor();
   spanEl.textContent = rancolor;
-  bodyEl.style.backgroundColor=rancolor;
-}
+  bodyEl.style.backgroundColor = rancolor;
+};
 buttonEl.addEventListener("click", btnFun);
