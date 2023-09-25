@@ -10,7 +10,8 @@ const onFormSubmit = (events) => {
         return alert("Всі поля повинні бути заповнені!");
     
     const user = { email: email.value, password: password.value };
-    console.log(user);
+  console.log(user);
+  formEl.currentTarget.reset();
     
 };
 
