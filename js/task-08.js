@@ -11,7 +11,7 @@ const onFormSubmit = (events) => {
     
     const user = { email: email.value, password: password.value };
   console.log(user);
-  formEl.currentTarget.reset();
+  events.currentTarget.reset();
     
 };
 
