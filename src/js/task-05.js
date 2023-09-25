@@ -1,7 +1,7 @@
 const inputText = document.querySelector("#name-input");
 const spanEl = document.querySelector("#name-output");
 const textfunction = (event) => {
-  if (event.currentTarget.value === "") {
+  if (event.currentTarget.value.trim() === "") {
     spanEl.textContent = "Anonymous";
   } else spanEl.textContent = event.currentTarget.value;
 };
