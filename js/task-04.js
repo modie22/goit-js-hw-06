@@ -3,15 +3,22 @@ const refs = {
   decrementBtn: document.querySelector('button[data-action ="decrement"]'),
   incrementBtn: document.querySelector('button[data-action ="increment"]'),
 };
-let counterValue = 0;
 
-const decrementfunction = () => {
-  refs.valueEl.textContent = counterValue--;
+const clickFunction = {
+  value: 0,
+  incMethod() {
+    this.value += 1;
+    return (refs.valueEl.textContent = this.value);
+  },
+  decMethod() {
+    this.value -= 1;
+    return (refs.valueEl.textContent = this.value);
+  },
 };
 
-const incrementfunction = () => {
-  refs.valueEl.textContent = counterValue++;
-};
-
-refs.decrementBtn.addEventListener("click", decrementfunction);
-refs.incrementBtn.addEventListener("click", incrementfunction);
+refs.incrementBtn.addEventListener("click", () => {
+  clickFunction.incMethod(refs.valueEl);
+});
+refs.decrementBtn.addEventListener("click", () => {
+  clickFunction.decMethod(refs.valueEl);
+});
